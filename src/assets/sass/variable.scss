@@ -1,41 +1,41 @@
+// 1. Import the initial variables
 @import "../../../node_modules/bulma/sass/utilities/initial-variables";
 @import "../../../node_modules/bulma/sass/utilities/functions";
 
-//$primary-brand: none;
+// 2. Set your own initial variables
+// Update blue
+$blue: #72d0eb;
+// Add pink and its invert
+$pink: #ffb3b3;
+$pink-invert: #fff;
+// Add a serif family
+$family-serif: "Merriweather", "Georgia", serif;
 
-//$secondary-brand: none;
-//$logo-brand: none;
-//$white-color: none;
-//$black-color: none;
-//$form-color: none;
-//$network-color: none;
-//$video-color: none;
-//$footer-color: none;
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+// Use the existing orange as the danger color
+$danger: $orange;
+// Use the new serif family
+$family-primary: $family-serif;
 
-$secondary-brand: none;
-$logo-brand: #173b93;
-$white-color: #fff;
-$black-color: none;
-$form-color: none;
-$network-color: #c8ced3;
-$video-color: #fff;
-$footer-color: #c8ced3;
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
 
-$primary-brand: rgb(65, 93, 165);
-$green: #7bb790;
-
-$primary: $primary-brand !default
-$success: $green !default
-
-//Invert Color
-$primary-brand-invert: findColorInvert($primary-brand) !default
-$green-invert: findColorInvert($green) !default
-
+// 5. Add new color variables to the color map.
 @import "../../../node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
 
-$primary-invert: $primary-brand-invert !default
-$success-invert: $green-invert !default
-
-$colors: ("primary": ($primary, $primary-invert), "success": ($success, $success-invert)) !default
-
+// 6. Import the rest of Bulma
 @import "../../../node_modules/bulma/bulma";
