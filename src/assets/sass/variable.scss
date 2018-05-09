@@ -1,0 +1,41 @@
+@import "../../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../../node_modules/bulma/sass/utilities/functions";
+
+//$primary-brand: none;
+
+//$secondary-brand: none;
+//$logo-brand: none;
+//$white-color: none;
+//$black-color: none;
+//$form-color: none;
+//$network-color: none;
+//$video-color: none;
+//$footer-color: none;
+
+$secondary-brand: none;
+$logo-brand: #173b93;
+$white-color: #fff;
+$black-color: none;
+$form-color: none;
+$network-color: #c8ced3;
+$video-color: #fff;
+$footer-color: #c8ced3;
+
+$primary-brand: rgb(65, 93, 165);
+$green: #7bb790;
+
+$primary: $primary-brand !default
+$success: $green !default
+
+//Invert Color
+$primary-brand-invert: findColorInvert($primary-brand) !default
+$green-invert: findColorInvert($green) !default
+
+@import "../../../node_modules/bulma/sass/utilities/derived-variables";
+
+$primary-invert: $primary-brand-invert !default
+$success-invert: $green-invert !default
+
+$colors: ("primary": ($primary, $primary-invert), "success": ($success, $success-invert)) !default
+
+@import "../../../node_modules/bulma/bulma";
